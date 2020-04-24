@@ -38,6 +38,7 @@ public class Board extends JPanel {
     private boolean inGame;
     private int minesLeft;
     private Image[] img;
+    private int score;
 
     private int allCells;
     private final JLabel statusbar;
@@ -71,6 +72,7 @@ public class Board extends JPanel {
         var random = new Random();
         inGame = true;
         minesLeft = N_MINES;
+        score = 0;
 
         allCells = N_ROWS * N_COLS;
         field = new int[allCells];
@@ -159,6 +161,7 @@ public class Board extends JPanel {
 
         int current_col = j % N_COLS;
         int cell;
+        score++;
 
         if (current_col > 0) {
             cell = j - N_COLS - 1;
@@ -363,7 +366,10 @@ public class Board extends JPanel {
                         }
 
                         if (field[(cRow * N_COLS) + cCol] == EMPTY_CELL) {
+                        	score++;
                             find_empty_cells((cRow * N_COLS) + cCol);
+                            tring msg = Integer.toString(score);
+                            statusbar.setText(msg);
                         }
                     }
                 }
