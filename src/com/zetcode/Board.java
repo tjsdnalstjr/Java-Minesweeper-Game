@@ -368,7 +368,7 @@ public class Board extends JPanel {
                         if (field[(cRow * N_COLS) + cCol] == EMPTY_CELL) {
                         	score++;
                             find_empty_cells((cRow * N_COLS) + cCol);
-                            tring msg = Integer.toString(score);
+                            String msg = Integer.toString(score);
                             statusbar.setText(msg);
                         }
                     }
