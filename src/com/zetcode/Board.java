@@ -342,7 +342,7 @@ public class Board extends JPanel {
                                 field[(cRow * N_COLS) + cCol] += MARK_FOR_CELL;
                                 minesLeft--;
                                 String msg = Integer.toString(minesLeft);
-                                statusbar.setText(msg);
+                                statusbar.setText("³²Àº Áö·Ú"+msg);
                             } else {
                                 statusbar.setText("No marks left");
                             }
