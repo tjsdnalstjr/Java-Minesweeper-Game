@@ -82,7 +82,7 @@ public class Board extends JPanel {
             field[i] = COVER_FOR_CELL;
         }
 
-        statusbar.setText(Integer.toString(minesLeft));
+        statusbar.setText("남은지뢰:"+minesLeft);
 
         int i = 0;
 
@@ -351,7 +351,7 @@ public class Board extends JPanel {
                             field[(cRow * N_COLS) + cCol] -= MARK_FOR_CELL;
                             minesLeft++;
                             String msg = Integer.toString(minesLeft);
-                            statusbar.setText(msg);
+                            statusbar.setText("남은 지뢰:"+msg);
                         }
                     }
 
@@ -369,7 +369,7 @@ public class Board extends JPanel {
                         score++;
                         doRepaint = true;
                         String msg = Integer.toString(score);
-                        statusbar.setText(msg);
+                        statusbar.setText("점수:"+msg);
 
                         if (field[(cRow * N_COLS) + cCol] == MINE_CELL) {
                             inGame = false;
@@ -379,7 +379,7 @@ public class Board extends JPanel {
                         	score++;
                             find_empty_cells((cRow * N_COLS) + cCol);
                             String msg2 = Integer.toString(score);
-                            statusbar.setText(msg2);
+                            statusbar.setText("점수:"+msg2);
                         }
                     }
                 }
