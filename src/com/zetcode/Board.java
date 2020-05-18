@@ -9,6 +9,8 @@ import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Board extends JPanel {
 
@@ -68,6 +70,8 @@ public class Board extends JPanel {
     private void newGame() {
 
         int cell;
+        Timer timer = new Timer();
+        TimerTask task =
 
         var random = new Random();
         inGame = true;
