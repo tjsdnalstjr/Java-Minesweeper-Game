@@ -70,9 +70,6 @@ public class Board extends JPanel {
     private void newGame() {
 
         int cell;
-        Timer timer = new Timer();
-        TimerTask task =
-
         var random = new Random();
         inGame = true;
         minesLeft = N_MINES;
@@ -89,6 +86,16 @@ public class Board extends JPanel {
         statusbar.setText("³²ÀºÁö·Ú:"+minesLeft);
 
         int i = 0;
+        Timer timer1 = new Timer();
+        TimerTask task1 = new TimerTask() {
+        	@Override
+        	public void run() {
+        		inGame = false;
+        		statusbar.setText("Time Over");
+        		timer1.cancel();
+        	}
+        };
+        timer1.schedule(task1, 5000);
 
         while (i < N_MINES) {
 
