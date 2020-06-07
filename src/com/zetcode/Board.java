@@ -86,6 +86,7 @@ public class Board extends JPanel {
         statusbar.setText("³²ÀºÁö·Ú:"+minesLeft);
 
         int i = 0;
+        int j = 10000;
         Timer timer1 = new Timer();
         TimerTask task1 = new TimerTask() {
         	@Override
@@ -95,7 +96,7 @@ public class Board extends JPanel {
         		timer1.cancel();
         	}
         };
-        timer1.schedule(task1, 5000);
+        timer1.schedule(task1, j);
 
         while (i < N_MINES) {
 
